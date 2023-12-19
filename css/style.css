@@ -1,0 +1,511 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url("./Dancing_Script/DancingScript-VariableFont_wght.ttf");
+}
+body .golden {
+  color: #D3AB55;
+}
+
+body .grey {
+  color: #BBBBBB;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+header .hamburger-menu .line::after, header .hamburger-menu .line::before, header .hamburger-menu .line {
+  width: 30px;
+  height: 3px;
+  background-color: #D3AB55;
+}
+
+body {
+  background-color: #262626;
+}
+body h1 {
+  font-family: "Dancing Script";
+  font-size: 70px;
+}
+body h2 {
+  font-size: 30px;
+}
+body h3 {
+  font-size: 12px;
+}
+body button {
+  background: none;
+  padding: 15px 20px;
+  border-color: #D3AB55;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border-width: 1px;
+  margin: 50px auto;
+  display: block;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+body button:hover {
+  background-color: #D3AB55;
+  color: #262626;
+}
+body .titleBox {
+  position: relative;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  width: 350px;
+  height: 100px;
+  padding: 50px;
+}
+body .titleBox .logoContainer {
+  position: relative;
+  overflow: hidden;
+  height: 75px;
+  width: 75px;
+  flex-shrink: 0;
+  border: solid 2px #D3AB55;
+  border-radius: 50%;
+  color: #D3AB55;
+}
+body .titleBox .logoContainer i {
+  position: absolute;
+  left: -2%;
+  top: 15%;
+  font-size: 50px;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  background-color: black;
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+header .bg {
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+header .bg img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+header .titleBox {
+  z-index: 2;
+}
+header .menu-images {
+  position: fixed;
+  display: block;
+  background-color: #262626;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 3;
+  transform: translate(-100%, 0);
+  transition: 0.5s;
+}
+header .menu-images .imgContainer {
+  position: absolute;
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 1px 20px rgba(0, 0, 0, 0.103);
+}
+header .menu-images .imgContainer img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+header .menu-images .img1 {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
+header .menu-images .img2 {
+  position: absolute;
+  left: 30%;
+  top: 35%;
+}
+header .menu-images .img3 {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+header .hamburger-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  height: 50px;
+  width: 50px;
+}
+header .hamburger-menu input[type=checkbox] {
+  display: none;
+}
+header .hamburger-menu input[type=checkbox]:checked + .menu-elements .toggler {
+  background-color: transparent;
+}
+header .hamburger-menu input[type=checkbox]:checked + .menu-elements .toggler::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+header .hamburger-menu input[type=checkbox]:checked + .menu-elements .toggler::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+header .hamburger-menu input[type=checkbox]:checked + .menu-elements .menu-images,
+header .hamburger-menu input[type=checkbox]:checked + .menu-elements .menu-items {
+  transform: translate(0, 0);
+}
+header .hamburger-menu .line {
+  margin: 4px 0;
+  position: relative;
+  display: block;
+  z-index: 4;
+  cursor: pointer;
+}
+header .hamburger-menu .line::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+}
+header .hamburger-menu .line::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+}
+header .hamburger-menu .hamburger-button {
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  transform: translate(0, -50%);
+}
+header .menu-items {
+  position: fixed;
+  z-index: 3;
+  background-color: #111;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  transform: translate(200%, 0);
+}
+header .menu-items ul li {
+  text-align: center;
+  list-style: none;
+  padding: 10px 0;
+}
+header .menu-items ul li a {
+  font-family: "Dancing Script";
+  font-size: 50px;
+  color: #BBBBBB;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+header .menu-items ul li a:hover {
+  color: #D3AB55;
+  font-size: 55px;
+}
+header .container {
+  position: relative;
+  display: block;
+  z-index: 2;
+}
+header .container h1 {
+  text-align: center;
+  padding: 50px 0 10px 0;
+}
+header .container h2 {
+  text-align: center;
+}
+
+main {
+  height: 1200px;
+  margin: 100px 0 0 0;
+  position: relative;
+}
+main .imgContainer {
+  width: 50%;
+  max-width: fit-content;
+  position: absolute;
+  left: -15%;
+  top: -5%;
+  margin: 200px 0;
+}
+main .imgContainer img {
+  width: 100%;
+}
+main .textBlock {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  right: 5%;
+  top: -2%;
+  margin: 60px 0;
+}
+main .textBlock h1 {
+  text-align: center;
+}
+main .textBlock h2 {
+  text-align: center;
+  margin: 15px 0;
+}
+main .textBlock p {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+main .textBlock p::before {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  content: "***";
+  color: #D3AB55;
+  text-align: center;
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 50px 0 0 0;
+}
+main .textBlock p::after {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  content: "***";
+  color: #D3AB55;
+  text-align: center;
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px 0 0 0;
+}
+main .textBlock button {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+main .gridContainer {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  bottom: 0;
+}
+main .gridContainer .box {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+main .gridContainer .box .cardContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-100%, 0);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+}
+main .gridContainer .box .cardContainer .cardBG {
+  position: absolute;
+  background-color: #D3AB55;
+  opacity: 0.5;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+main .gridContainer .box .cardContainer .cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+}
+main .gridContainer .box .cardContainer .cardContent h2 {
+  font-size: 50px;
+  font-weight: 100;
+  margin: 0;
+}
+main .gridContainer .box .cardContainer .cardContent button {
+  margin: 10px;
+  background-color: white;
+  color: #D3AB55;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+main .gridContainer .box:hover .cardContainer {
+  transform: translate(0, 0);
+}
+main .gridContainer .box img {
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+}
+
+footer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 300px;
+  position: relative;
+}
+footer .copyright {
+  text-align: center;
+  font-size: 10px;
+}
+footer .socialContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .socialContainer .social {
+  height: 50px;
+  width: 50px;
+  color: #BBBBBB;
+  text-align: center;
+}
+footer .socialContainer .social a {
+  font-size: 40px;
+  color: #BBBBBB;
+  display: inline-block;
+  transition: all 0.5s;
+}
+footer .socialContainer .social a:hover {
+  color: #D3AB55;
+}
+
+@media screen and (max-width: 1439px) {
+  main {
+    height: 1100px;
+  }
+  main .textBlock p {
+    font-size: 10px;
+  }
+  main .textBlock p::before, main .textBlock p::after {
+    font-size: 15px;
+  }
+  main .textBlock button {
+    bottom: 0;
+  }
+  main .gridContainer {
+    height: 500px;
+  }
+  main .gridContainer .box img {
+    width: 100%;
+  }
+  main .gridContainer .box .cardContainer .cardContent h2 {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  header .menu-images .imgContainer {
+    width: 200px;
+    height: 100px;
+  }
+  header .menu-images .img1 {
+    top: 24%;
+    left: 25%;
+  }
+  header .menu-images .img2 {
+    top: 32%;
+    left: 33%;
+  }
+  header .menu-images .img3 {
+    top: 40%;
+    left: 40%;
+  }
+}
+@media screen and (max-width: 767px) {
+  header .imgContainer {
+    display: none;
+  }
+  header .menu-images {
+    display: none;
+  }
+  header .menu-items {
+    width: 100%;
+  }
+  main {
+    margin: 50px 0;
+    height: 900px;
+  }
+  main .imgContainer {
+    top: 5%;
+  }
+  main .textBlock {
+    top: 0;
+  }
+  main .textBlock h1 {
+    font-size: 40px;
+  }
+  main .textBlock h2 {
+    font-size: 15px;
+  }
+  main .textBlock p {
+    font-size: 9px;
+  }
+  main .textBlock p::before, main .textBlock p::after {
+    font-size: 15px;
+  }
+  main .textBlock button {
+    bottom: -50px;
+  }
+  main .gridContainer {
+    height: 300px;
+  }
+  main .gridContainer .box img {
+    width: 100%;
+  }
+  main .gridContainer .box .cardContainer .cardContent h2 {
+    font-size: 15px;
+  }
+  main .gridContainer .box .cardContainer .cardContent p {
+    font-size: 7px;
+  }
+  main .gridContainer .box .cardContainer .cardContent button {
+    font-size: 10px;
+    margin: 5px 0;
+    padding: 5px 10px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
